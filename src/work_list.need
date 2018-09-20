@@ -1,0 +1,16 @@
+/*
+Lista de tarefas RPG
+
+/*COMPLETE*/	Criar sistema de skills
+/*COMPLETE*/	Criar objeto save
+/*COMPLETE*/	Consertar taxa de evasão e critico
+/*COMPLETE*/	Implementar sistema de dano de forma efetiva
+/*COMPLETE*/	Diminuir atributo aleatório ao conversar
+/*COMPLETE*/	Implesmentar chance de acerto crítico
+/*COMPLETE*/	Criar sistema de party com carisma e conversão de inimigos
+/*COMPLETE*/	Alterar o sistema de atribuição de atributos, estes só terão partes específicas: EX: Vinicius == +Carisma
+/*COMPLETE*/	Implementar chances de evasão baseado em agilidade
+/*COMPLETE*/	Consertar sistema de level up, para upar mais de uma vez quando ganha muita experiencia
+
+Criar log de batalha
+*/

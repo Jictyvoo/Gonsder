@@ -1,0 +1,7 @@
+# Ignoring Compiled files
+*.a
+*.o
+*.so
+*.obj
+*.dll
+
