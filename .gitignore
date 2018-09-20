@@ -5,3 +5,7 @@
 *.obj
 *.dll
 
+# Ignoring IDE files
+.idea/
+.settings/
+cmake-build-debug
