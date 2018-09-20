@@ -1,15 +1,19 @@
-#include <stdio.h>
-#include <string.h>
+#ifndef COM_BR_HAGENIX_GAMES_UTIL_PADRAO_NOME_H
+#define COM_BR_HAGENIX_GAMES_UTIL_PADRAO_NOME_H
 
-int verifica_padrao(char nome_arquivo[], char padrao_nome[]){
+#include <iostream>
+#include <string>
+using namespace std;
+
+int verifica_padrao(string nome_arquivo, string padrao_nome){
 	
 	unsigned short int auxiliar;
 	
-	int quantidade_TOTAL = strlen(padrao_nome);
-	int quantidade_compara = strlen(nome_arquivo);
+	int quantidade_TOTAL = padrao_nome.size();
+	int quantidade_compara = nome_arquivo.size();
 	
-	char pra_comparar[strlen(nome_arquivo) + 1];
-	
+	string pra_comparar(quantidade_compara + 1, '\0');
+
 	if(quantidade_compara > quantidade_TOTAL){
 		int j = 0;
 		while(j < quantidade_TOTAL){
@@ -19,7 +23,7 @@ int verifica_padrao(char nome_arquivo[], char padrao_nome[]){
 	}
 	
 	else
-		strcpy(pra_comparar, nome_arquivo);
+		pra_comparar = nome_arquivo;
 	
 	int i = 0;
 	do{
@@ -36,14 +40,14 @@ int verifica_padrao(char nome_arquivo[], char padrao_nome[]){
 	return auxiliar;
 }
 
-int verifica_padr_ate(char nome_arquivo[], char padrao_nome[], char termino){
+int verifica_padr_ate(string nome_arquivo, string padrao_nome, char termino){
 	
 	unsigned short int auxiliar;
 	
-	int quantidade_TOTAL = strlen(padrao_nome);
-	int quantidade_compara = strlen(nome_arquivo);
+	int quantidade_TOTAL = padrao_nome.size();
+	int quantidade_compara = nome_arquivo.size();
 	
-	char pra_comparar[strlen(nome_arquivo) + 1];
+	string pra_comparar(quantidade_compara + 1, '\0');
 	
 	if(quantidade_compara > quantidade_TOTAL){
 		int j = 0;
@@ -54,7 +58,7 @@ int verifica_padr_ate(char nome_arquivo[], char padrao_nome[], char termino){
 	}
 	
 	else
-		strcpy(pra_comparar, nome_arquivo);
+		pra_comparar = nome_arquivo;
 	
 	int i = 0;
 	do{
@@ -71,14 +75,14 @@ int verifica_padr_ate(char nome_arquivo[], char padrao_nome[], char termino){
 	return auxiliar;
 }
 
-unsigned short int nomainus(char nome_arquivo[], char padrao_nome[], char termino){
+unsigned short int nomainus(string nome_arquivo, string padrao_nome, char termino){
 	
 	unsigned short int auxiliar;
 	
-	int quantidade_TOTAL = strlen(padrao_nome);
-	int quantidade_compara = strlen(nome_arquivo);
+	int quantidade_TOTAL = padrao_nome.size();
+	int quantidade_compara = nome_arquivo.size();
 	
-	char pra_comparar[strlen(nome_arquivo) + 1];
+	string pra_comparar(quantidade_compara + 1, '\0');
 	
 	if(quantidade_compara > quantidade_TOTAL){
 		int j = 0;
@@ -89,7 +93,7 @@ unsigned short int nomainus(char nome_arquivo[], char padrao_nome[], char termin
 	}
 	
 	else
-		strcpy(pra_comparar, nome_arquivo);
+		pra_comparar = nome_arquivo;
 	
 	int i = 0;
 	do{
@@ -105,3 +109,5 @@ unsigned short int nomainus(char nome_arquivo[], char padrao_nome[], char termin
 
 	return auxiliar;
 }
+
+#endif /* COM_BR_HAGENIX_GAMES_UTIL_PADRAO_NOME_H */
