@@ -9,58 +9,61 @@
 #define COM_BR_HAGENIX_GAMES_MODEL_LIVETHING_H_
 
 #include <string>
+
 using namespace std;
 
 class LiveThing {
-	public:
-		LiveThing();
-		virtual ~LiveThing();
+public:
+    LiveThing();
 
-	protected:
-		long int VIDA;
-		long int have_life;
+    virtual ~LiveThing();
 
-		long int AGILIDADE;
-		long int have_agility;
+protected:
+    long int life;
+    long int lifeHave;
 
-		long int DEFESA;
-		long int have_defense;
+    long int agility;
+    long int agilityHave;
 
-		long int ATAQUE;
-		long int have_attack;
+    long int defense;
+    long int defenseHave;
 
-		long int CHARME;
-		long int have_charm;
+    long int attack;
+    long int attackHave;
 
-		long int CARISMA;
-		long int have_charism;
+    long int charm;
+    long int charmHave;
 
-		unsigned long int EXPERIENCIA;
-		unsigned long int NIVEL;
+    long int charisma;
+    long int charismaHave;
 
-		string NOME_PERSONAGEM;
+    unsigned long int experience;
+    unsigned long int level;
 
-	protected:
-		void level_up();
-		void life_regen();
+    string characterName;
 
-	public:
+protected:
+    void level_up();
 
-		void all_regen();
+    void life_regen();
 
-		bool setDamage(long int dano);
+public:
 
-		string getName();
+    void all_regen();
 
-		void setName(string newName);
+    bool setDamage(long int dano);
 
-		long int attackDamage();
+    string getName();
 
-		short int criticalHit(string nome_defensor);
+    void setName(string newName);
 
-		bool willEvade(long int oponentStrength);
+    long attackDamage(long *pInt, string basicString, long *pInt1);
 
-		long int* getCharacterStatus();
+    short int criticalHit(string defenderName);
+
+    bool willEvade(long int opponentStrength);
+
+    long int *getCharacterStatus();
 };
 
 #endif /* COM_BR_HAGENIX_GAMES_MODEL_LIVETHING_H_ */

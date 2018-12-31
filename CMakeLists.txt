@@ -17,15 +17,16 @@ add_executable(Gonsder_em_C__
         src/controller/Director.h
         src/model/Backpack.cpp
         src/model/Backpack.h
-        src/model/CharacterSkill.cpp
-        src/model/CharacterSkill.h
+        src/model/Skills.cpp
+        src/model/Skills.h
         src/model/LiveThing.cpp
         src/model/LiveThing.h
-        src/model/MainCharacter.cpp
-        src/model/MainCharacter.h
-        src/model/SaveGame.cpp
-        src/model/SaveGame.h
+        src/model/entity/Player.cpp
+        src/model/entity/Player.h
+        src/model/business/SaveGame.cpp
+        src/model/business/SaveGame.h
+        src/util/UsableEnums.h
         src/util/os_check_use.h
-        src/util/padrao_nome.h
+        src/util/name_partner.h
         "src/view/Gonsder.cpp"
-        src/view/UserStories.hpp)
+        src/view/StoryScript.hpp)

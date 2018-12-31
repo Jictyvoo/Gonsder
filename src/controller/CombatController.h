@@ -9,36 +9,45 @@
 #define COM_BR_HAGENIX_GAMES_CONTROLLER_COMBATCONTROLLER_H_
 
 #include <string>
+#include "Director.h"
 #include "util/os_check_use.h"
-#include "model/MainCharacter.h"
+#include "src/model/entity/Player.h"
+#include "src/util/UsableEnums.h"
+
 using namespace std;
 
 class CombatController {
-	public:
-		CombatController();
-		virtual ~CombatController();
+public:
+    CombatController();
 
-		unsigned short int acoes_player();
+    virtual ~CombatController();
 
-		bool converte_companheiros(MainCharacter *COMPANHEIROS[], MainCharacter **COMMENEMY);
+    unsigned short int acoes_player();
 
-		bool seduzir_enemy(MainCharacter **COMMENEMY, MainCharacter *COMPANHEIROS[]);
+    bool converte_companheiros(Player *COMPANHEIROS[], Player **COMMENEMY);
 
-		bool conversa_diminui(MainCharacter **INIMIGO, MainCharacter **MAIN_PERSONAGEM, MainCharacter *COMPANHEIROS[], string vilao_frases[], unsigned short int numero);
+    bool seduzir_enemy(Player **COMMENEMY, Player *COMPANHEIROS[]);
 
-		bool utilizando_auxiliar(unsigned short int indentificacao_skill, MainCharacter **MAIN_PERSONAGEM);
+    bool conversa_diminui(Player **INIMIGO, Player **MAIN_PERSONAGEM, Player *COMPANHEIROS[], string vilao_frases[],
+                          unsigned short int numero);
 
-		bool utiliza_skills(MainCharacter **MAIN_PERSONAGEM);
+    bool utilizando_auxiliar(unsigned short int indentificacao_skill, Player **MAIN_PERSONAGEM);
 
-		bool auxiliar_controle_duracao(MainCharacter **ESTE_PERSONAGEM, unsigned short int indentificador, char skills_ativadas[], string nome_skill);
+    bool utiliza_skills(Player **MAIN_PERSONAGEM);
 
-		void controle_skill_duracao(MainCharacter **ESTE_PERSONAGEM);
+    bool auxiliar_controle_duracao(Player **ESTE_PERSONAGEM, unsigned short int indentificador, char skills_ativadas[],
+                                   string nome_skill);
 
-		void attack_system(MainCharacter **INIMIGO,MainCharacter **MAIN_PERSONAGEM);
+    void controle_skill_duracao(Player **ESTE_PERSONAGEM);
 
-		bool combat_system(MainCharacter **MAIN_PERSONAGEM, MainCharacter *COMPANHEIROS[], MainCharacter **INIMIGO, string vilao_frases[], unsigned short int chance, short int numero);
+    void attack_system(Player **INIMIGO, Player **MAIN_PERSONAGEM);
 
-		bool encontra_inimigos(MainCharacter **MAIN_PERSONAGEM, MainCharacter *COMPANHEIROS[], MainCharacter **INIMIGO, unsigned short int chance_drop, string vilao_frases[], unsigned short int numero_vilao_frases);
+    bool combat_system(Player **MAIN_PERSONAGEM, Player *COMPANHEIROS[], Player **INIMIGO, string vilao_frases[],
+                       unsigned short int chance, short int numero);
+
+    bool encontra_inimigos(Player **MAIN_PERSONAGEM, Player *COMPANHEIROS[], Player **INIMIGO,
+                           unsigned short int chance_drop, string vilao_frases[],
+                           unsigned short int numero_vilao_frases);
 
 };
 

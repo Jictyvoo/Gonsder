@@ -9,16 +9,13 @@
 #define OPERATIONAL_SYSTEM 0
 #endif // _WIN32
 
-/*abaixo toda as declara��es de fun��es, estruturas, ponteiros e vari�veis de aux�lio*/
+/*abaixo toda as declaracoes de funcoes, estruturas, ponteiros e variaveis de auxilio*/
 
-void limpa_tela() {    /*ir� limpar a tela a depender do sistema operacional*/
-    if (OPERATIONAL_SYSTEM)
-        system("cls");
-    else
-        system("clear");
+void clearScreen() {    /*ira limpar a tela a depender do sistema operacional*/
+    system("cls || clear");
 }
 
-void tecla_buff() {    /*ir� limpar o buff no teclado a depender do sistema operacional*/
+void clearKeyboardBuff() {    /*irá limpar o buff no teclado a depender do sistema operacional*/
     setbuf(stdin, nullptr);
 }
 
@@ -26,11 +23,11 @@ void entrada_buff(FILE *file) {    /*ir� limpar o buff do arquivo a depender d
     setbuf(file, nullptr);
 }
 
-void continuar_enter() {    /*fun��o para reset das informa��es exibidas e continua��o da execu��o do programa*/
-    tecla_buff();
+void continuar_enter() {    /*funcao para reset das informacoes exibidas e continuacao da execucao do programa*/
+    clearKeyboardBuff();
     printf("\nPressione ENTER para continuar. . . ");
     getchar();
-    tecla_buff();
+    clearKeyboardBuff();
 }
 
 #endif /* COM_BR_HAGENIX_GAMES_UTIL_OS_CHECK_USE_H */
